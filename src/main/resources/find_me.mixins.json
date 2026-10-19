@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.kuzhi.findme.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EntityMixin",
+    "TamableAnimalMixin",
+    "AbstractHorseMixin",
+    "LivingEntityMixin",
+    "ServerPlayerMixin"
+  ],
+  "client": [
+    "client.KeyboardInputMixin",
+    "client.GameRendererMixin",
+    "client.CameraMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

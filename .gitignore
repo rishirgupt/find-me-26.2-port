@@ -1,0 +1,8 @@
+/build/
+/run/
+/.gradle/
+/bin/
+# art and audio of the original mod are not copied here
+*.png
+*.ogg
+*.wav

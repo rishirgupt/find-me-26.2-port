@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "find_me:name_paper",
+    "W": "#minecraft:wooden_slabs"
+  },
+  "pattern": [
+    " P ",
+    " W ",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "find_me:small_house"
+  }
+}

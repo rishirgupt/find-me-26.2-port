@@ -1,0 +1,26 @@
+package com.kuzhi.findme.common;
+
+public enum CompanionAction {
+   SUMMON,
+   RETURN_HOME,
+   NEXT,
+   PREVIOUS,
+   SELECT,
+   SELECT_SUMMON,
+   RECALL,
+   REMOVE,
+   MOVE_OTHER,
+   ASSIGN_SLOT,
+   REORDER,
+   IGNORE_SYNC,
+   IGNORE_REMOVE,
+   BLACKLIST_SYNC,
+   BLACKLIST_ADD,
+   BLACKLIST_REMOVE,
+   SET_HOME,
+   GO_HOME,
+   CLEAR_HOME,
+   DEAD_SYNC,
+   DEAD_REMOVE,
+   SYNC;
+}

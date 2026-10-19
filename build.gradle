@@ -1,0 +1,46 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+base {
+	archivesName = "find_me-fabric-26.2"
+}
+
+loom {
+	mods {
+		"find_me" {
+			sourceSet sourceSets.main
+		}
+	}
+}
+
+dependencies {
+	// Minecraft 26.x is unobfuscated: no mappings line, and plain implementation instead of modImplementation.
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	compileOnly "com.google.code.findbugs:jsr305:3.0.2"
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+	it.options.compilerArgs += ["-Xmaxerrs", "100000", "-Xmaxwarns", "0"]
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+// PORTING: files not yet ported stay in the tree but are not compiled.
+sourceSets.main.java {
+	file("port-excludes.txt").readLines().findAll { it.trim() }.each { exclude it.trim() }
+}
